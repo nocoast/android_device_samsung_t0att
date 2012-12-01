@@ -22,10 +22,10 @@
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_n7100_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_t0att_defconfig
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := t03g,n7100,GT-N7100
+TARGET_OTA_ASSERT_DEVICE := t0lteatt,t0lte,t0att,sgh-i317,SGH-I317
 
 # inherit from the proprietary version
--include vendor/samsung/n7100/BoardConfigVendor.mk
+-include vendor/samsung/t0att/BoardConfigVendor.mk

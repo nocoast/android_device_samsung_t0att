@@ -2,7 +2,7 @@
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := n7100
+PRODUCT_RELEASE_NAME := t0att
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
@@ -12,14 +12,14 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/n7100/full_n7100.mk)
+$(call inherit-product, device/samsung/t0att/full_t0att.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := n7100
-PRODUCT_NAME := cm_n7100
+PRODUCT_DEVICE := t0att
+PRODUCT_NAME := cm_t0att
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-N7100
+PRODUCT_MODEL := SGH-I317
 PRODUCT_MANUFACTURER := samsung
 
 # Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t03gxx TARGET_DEVICE=t03g BUILD_FINGERPRINT="samsung/t03gxx/t03g:4.1.1/JRO03C/N7100XXALJ3:user/release-keys" PRIVATE_BUILD_DESC="t03gxx-user 4.1.1 JRO03C N7100XXALJ3 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0att TARGET_DEVICE=t0att BUILD_FINGERPRINT="samsung/t0lteatt/t0lteatt:4.1.1/JR003C/I317UCALJ2:user/release-keys" PRIVATE_BUILD_DESC="t0lteatt-user 4.1.1 JR003c I317UCALJ2 release-keys"
