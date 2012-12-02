@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-# Include common makefile
-$(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
 LOCAL_PATH := device/samsung/t0att
 
@@ -52,10 +50,10 @@ PRODUCT_COPY_FILES += \
 # Product specific Packages
 PRODUCT_PACKAGES += \
     GalaxyNote2Settings \
+    libsecril-client \
+    libsecril-client-sap \
     SamsungServiceMode
 
-# libsecril-client \
-# libsecril-client-sap \
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -97,5 +95,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
+# Include common makefile
+$(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/t0att/t0att-vendor.mk)

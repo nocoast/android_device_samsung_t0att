@@ -32,6 +32,9 @@ adb pull /system/bin/efsks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/sys
 adb pull /system/bin/ks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/ks
 adb pull /system/bin/netmgrd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/netmgrd
 adb pull /system/bin/qmuxd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qmuxd
+adb pull /system/bin/qmiproxy ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qmiproxy
+adb pull /system/bin/ati_distributor ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/at_distributor
+adb pull /system/bin/smdexe ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/smdexe
 adb pull /system/bin/sensorservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorservice
 adb pull /system/bin/sensorhubservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorhubservice
 adb pull /system/lib/hw/gps.default.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/gps.default.so
@@ -55,11 +58,13 @@ adb pull /system/lib/libqmi_common_so.so ../../../vendor/$MANUFACTURER/$DEVICE/p
 adb pull /system/lib/libqmi_csi.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_csi.so
 adb pull /system/lib/libqmi_encdec.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_encdec.so
 adb pull /system/lib/libqmiservices.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmiservices.so
+adb pull /system/lib/libatparser.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libatparser.so
+adb pull /system/lib/libomission_avoidance.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libomission_avoidance.so
+adb pull /system/lib/libfactoryutil.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libfactoryutil.so
 adb pull /system/lib/libreference-ril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libreference-ril.so
 adb pull /system/lib/libril-qc-qmi-1.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qc-qmi-1.so
 adb pull /system/lib/libril-qcril-hook-oem.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qcril-hook-oem.so
 adb pull /system/lib/libril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril.so
-adb pull /system/lib/libsecril-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsecril-client.so
 adb pull /system/lib/hw/vendor-camera.exynos4.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/camera.smdk4x12.so
 adb pull /system/lib/hw/sensors.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensors.smdk4x12.so
 adb pull /system/lib/hw/sensorhubs.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensorhubs.smdk4x12.so
@@ -72,7 +77,6 @@ adb pull /system/usr/keylayout/sec_touchkey.kl ../../../vendor/$MANUFACTURER/$DE
 adb pull /system/vendor/firmware/libpn544_fw.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/libpn544_fw.so
 adb pull /system/vendor/firmware/SlimISP_GK.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/SlimISP_GK.bin
 adb pull /system/vendor/firmware/SlimISP_ZK.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/SlimISP_ZK.bin
-
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2012 The CyanogenMod Project
@@ -98,12 +102,17 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/bin/rild:system/bin/rild \\
     \$(LOCAL_PATH)/proprietary/system/bin/sec-ril:system/bin/sec-ril \\
     \$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/smdexe:system/bin/smdexe \\
+    \$(LOCAL_PATH)/proprietary/system/bin/qmiproxy:system/bin/qmiproxy \\
+    \$(LOCAL_PATH)/proprietary/system/bin/at_distributor:system/bin/at_distributor \\
     \$(LOCAL_PATH)/proprietary/system/bin/qmuxd:system/bin/qmuxd
 
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/lib/libakm.so:system/lib/libakm.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libril.so:system/lib/libril.so \\
-    \$(LOCAL_PATH)/proprietary/system/lib/libsecril-client.so:system/lib/libsecril-client.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libatparser.so:system/lib/libatparser.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libomission_avoidance.so:system/lib/libomission_avoidance.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libfactoryutil.so:system/lib/libfactoryutil.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libsensorservice.so:system/lib/libsensorservice.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libgps.so:system/lib/libgps.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libgps.utils.so:system/lib/libgps.utils.so \\

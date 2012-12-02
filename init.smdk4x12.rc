@@ -489,10 +489,10 @@ service icd /system/bin/icd
     onrestart exec icd_check
 
 # AT Distributor for factory test
-#service at_distributor /system/bin/at_distributor
-#    class main
-#    user root
-#    group radio log
+service at_distributor /system/bin/at_distributor
+    class main
+    user root
+    group radio log
 
 # diag app for cp uart
 #service diag_uart_log /system/bin/diag_uart_log
@@ -573,6 +573,11 @@ service macloader /system/bin/macloader
 service netmgrd /system/bin/netmgrd
     class late_start
 
+service SMD-daemon /system/bin/smdexe
+    class main
+    user root
+    group system radio inet net_raw
+
 service qc_kickstart /system/bin/qcks s
     class core
     user root
@@ -591,11 +596,10 @@ service secril-daemon /system/bin/sec-ril
     group radio cache inet misc audio sdcard_rw diag log
 
 #For EncryptionMode - remove disabled, Modify class main
-#NOT NEEDED
-#service qmiproxy /system/bin/qmiproxy
-#    class main
-#    user radio
-#    group radio gps
+service qmiproxy /system/bin/qmiproxy
+    class main
+    user radio
+    group radio gps
 
 service qmuxd /system/bin/qmuxd
     class main
