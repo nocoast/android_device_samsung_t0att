@@ -126,6 +126,9 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/lib/libloc_eng.so:system/lib/libloc_eng.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libnetmgr.so:system/lib/libnetmgr.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libqcci_legacy.so:system/lib/libqcci_legacy.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdsutils.so:system/lib/libdsutils.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdiag.so:system/lib/libdiag.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libqdi.so:system/lib/libqdi.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libqdp.so:system/lib/libqdp.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libqmi.so:system/lib/libqmi.so \\
