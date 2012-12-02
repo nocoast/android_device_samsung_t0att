@@ -101,6 +101,9 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/bin/sensorhubservice:system/bin/sensorhubservice \\
     \$(LOCAL_PATH)/proprietary/system/bin/rild:system/bin/rild \\
     \$(LOCAL_PATH)/proprietary/system/bin/sec-ril:system/bin/sec-ril \\
+    \$(LOCAL_PATH)/proprietary/system/bin/ks:system/bin/ks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/efsks:system/bin/efsks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/netmgrd:system/bin/netmgrd \\
     \$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \\
     \$(LOCAL_PATH)/proprietary/system/bin/smdexe:system/bin/smdexe \\
     \$(LOCAL_PATH)/proprietary/system/bin/qmiproxy:system/bin/qmiproxy \\
