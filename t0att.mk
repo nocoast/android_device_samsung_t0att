@@ -29,14 +29,21 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Init files
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
     $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
 
+#Using HAL for now
 # Audio
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/t0att
+	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+	$(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
+	$(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf
+#    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/t0att
+
 
 # Gps
 PRODUCT_COPY_FILES += \
@@ -51,9 +58,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     GalaxyNote2Settings \
     libsecril-client \
-    libsecril-client-sap \
     SamsungServiceMode
 
+#    libsecril-client-sap \
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -85,7 +92,7 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SamsungQualcommD2RIL \
+    ro.telephony.ril_class=SamsungExynosT0LTERIL \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10
