@@ -1,0 +1,21 @@
+# Release name
+PRODUCT_RELEASE_NAME := t0att
+
+# Phone
+$(call inherit-product, vendor/liquid/config/common_phone.mk))
+
+# gsm
+$(call inherit-product, vendor/liquid/config/common_gsm.mk)
+
+# device
+$(call inherit-product, device/samsung/t0att/full_t0att.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := t0att
+PRODUCT_NAME := liquid_t0att
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SGH-I317
+PRODUCT_MANUFACTURER := samsung
+
+# Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0att TARGET_DEVICE=t0att BUILD_FINGERPRINT="samsung/t0lteatt/t0lteatt:4.1.1/JR003C/I317UCALJ2:user/release-keys" PRIVATE_BUILD_DESC="t0lteatt-user 4.1.1 JR003c I317UCALJ2 release-keys"
