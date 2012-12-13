@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := t0att
 
 # Phone
-$(call inherit-product, vendor/liquid/config/common_phone.mk))
+$(call inherit-product, vendor/liquid/config/common_phone.mk)
 
 # gsm
 $(call inherit-product, vendor/liquid/config/common_gsm.mk)
